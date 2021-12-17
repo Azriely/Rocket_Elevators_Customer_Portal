@@ -62,7 +62,7 @@ namespace RocketElevatorsCustomerPortal.Areas.Identity.Pages.Account.Manage
                 return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
             }
             var client = new HttpClient();
-            HttpResponseMessage response = await client.GetAsync("https://jakerocket.azurewebsites.net/address/" + user.Email + "/phone");
+            HttpResponseMessage response = await client.GetAsync("https://rocketelevators1.azurewebsites.net/address/" + user.Email + "/phone");
 
             response.EnsureSuccessStatusCode();
             TempData["phone"] = await response.Content.ReadAsStringAsync();
@@ -86,7 +86,7 @@ namespace RocketElevatorsCustomerPortal.Areas.Identity.Pages.Account.Manage
 
 
             var client = new HttpClient();
-            HttpResponseMessage response = await client.GetAsync("https://jakerocket.azurewebsites.net/address/" + user.Email +"/" +Input.PhoneNumber);
+            HttpResponseMessage response = await client.GetAsync("https://rocketelevators1.azurewebsites.net/address/" + user.Email +"/" +Input.PhoneNumber);
 
             
             var jsonString = await response.Content.ReadAsStringAsync();

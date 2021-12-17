@@ -31,7 +31,7 @@ namespace RocketElevatorsCustomerPortal
         {
             string dbstring = Configuration.GetConnectionString("dbstring");
             var serverVersion = new MySqlServerVersion(new Version(5, 0));
-            services.AddDbContext<jacobgomezContext>(opt =>
+            services.AddDbContext<matthewdandurandContext>(opt =>
                     opt.UseMySql(dbstring, serverVersion));
 
             services.AddControllersWithViews();

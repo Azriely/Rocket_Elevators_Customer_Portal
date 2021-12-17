@@ -74,7 +74,7 @@ namespace RocketElevatorsCustomerPortal.Areas.Identity.Pages.Account
         private async Task<Boolean> GetExternalResponse(string email)
         {
             var client = new HttpClient();
-            HttpResponseMessage response = await client.GetAsync("https://jakerocket.azurewebsites.net/customer/" + email);
+            HttpResponseMessage response = await client.GetAsync("https://rocketelevators1.azurewebsites.net/customer/" + email);
             response.EnsureSuccessStatusCode();
             string result = await response.Content.ReadAsStringAsync();
             if (result.Replace('"', ' ').Trim() == "Not Found")

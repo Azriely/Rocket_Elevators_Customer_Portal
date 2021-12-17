@@ -120,7 +120,7 @@ namespace RocketElevatorsCustomerPortal.Areas.Identity.Pages.Account.Manage
             {
 
                 var client = new HttpClient();
-                HttpResponseMessage response = await client.GetAsync("https://jakerocket.azurewebsites.net/address/" + user);
+                HttpResponseMessage response = await client.GetAsync("https://rocketelevators1.azurewebsites.net/address/" + user);
 
                 response.EnsureSuccessStatusCode();
                 var jsonString = await response.Content.ReadAsStringAsync();
@@ -144,7 +144,7 @@ namespace RocketElevatorsCustomerPortal.Areas.Identity.Pages.Account.Manage
         {
             if (client.BaseAddress == null)
             {
-                client.BaseAddress = new Uri("https://jakerocket.azurewebsites.net/");
+                client.BaseAddress = new Uri("https://rocketelevators1.azurewebsites.net/");
             }
             
             client.DefaultRequestHeaders.Accept.Clear();

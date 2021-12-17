@@ -19,7 +19,7 @@ namespace RocketElevatorsCustomerPortal.Controllers
     public class InterventionController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly jacobgomezContext _context;
+        private readonly matthewdandurandContext _context;
         private readonly UserManager<RocketElevatorsCustomerPortalUser> _userManager;
         private readonly IFlashMessage _flashmessage;
 
@@ -27,7 +27,7 @@ namespace RocketElevatorsCustomerPortal.Controllers
         public string batteryId = "";
         public string columnId = "";
         public string elevatorId = "";
-        public InterventionController(jacobgomezContext context, UserManager<RocketElevatorsCustomerPortalUser> userManager, ILogger<HomeController> logger, IFlashMessage flashMessage)
+        public InterventionController(matthewdandurandContext context, UserManager<RocketElevatorsCustomerPortalUser> userManager, ILogger<HomeController> logger, IFlashMessage flashMessage)
         {
             _flashmessage = flashMessage;
             _userManager = userManager;
@@ -108,7 +108,7 @@ namespace RocketElevatorsCustomerPortal.Controllers
 
             if (client.BaseAddress == null)
             {
-                client.BaseAddress = new Uri("https://jakerocket.azurewebsites.net/");
+                client.BaseAddress = new Uri("https://rocketelevators1.azurewebsites.net/");
             }
 
             client.DefaultRequestHeaders.Accept.Clear();
@@ -134,7 +134,7 @@ namespace RocketElevatorsCustomerPortal.Controllers
             {
 
                 var client = new HttpClient();
-                HttpResponseMessage response = await client.GetAsync("https://jakerocket.azurewebsites.net/customer/id/" + user);
+                HttpResponseMessage response = await client.GetAsync("https://rocketelevators1.azurewebsites.net/customer/id/" + user);
 
                 response.EnsureSuccessStatusCode();
                 string jsonString = await response.Content.ReadAsStringAsync();
@@ -160,7 +160,7 @@ namespace RocketElevatorsCustomerPortal.Controllers
                 TempData["preload"] = "preload";
                 var client = new HttpClient();
 
-                HttpResponseMessage response = await client.GetAsync("https://jakerocket.azurewebsites.net/product/building/" + customer);
+                HttpResponseMessage response = await client.GetAsync("https://rocketelevators1.azurewebsites.net/product/building/" + customer);
 
                 response.EnsureSuccessStatusCode();
 
@@ -240,7 +240,7 @@ namespace RocketElevatorsCustomerPortal.Controllers
         {
 
             var client = new HttpClient();
-            HttpResponseMessage response = await client.GetAsync("https://jakerocket.azurewebsites.net/interventions/building/"+ customer);
+            HttpResponseMessage response = await client.GetAsync("https://rocketelevators1.azurewebsites.net/intervention/building/"+ customer);
 
             response.EnsureSuccessStatusCode();
 
@@ -268,7 +268,7 @@ namespace RocketElevatorsCustomerPortal.Controllers
 
             var client = new HttpClient();
 
-            HttpResponseMessage response = await client.GetAsync("https://jakerocket.azurewebsites.net/interventions/battery/" + id);
+            HttpResponseMessage response = await client.GetAsync("https://rocketelevators1.azurewebsites.net/intervention/battery/" + id);
 
             response.EnsureSuccessStatusCode();
 
@@ -292,7 +292,7 @@ namespace RocketElevatorsCustomerPortal.Controllers
 
             var client = new HttpClient();
 
-            HttpResponseMessage response = await client.GetAsync("https://jakerocket.azurewebsites.net/interventions/column/" + id);
+            HttpResponseMessage response = await client.GetAsync("https://rocketelevators1.azurewebsites.net/intervention/column/" + id);
 
             response.EnsureSuccessStatusCode();
 
@@ -316,7 +316,7 @@ namespace RocketElevatorsCustomerPortal.Controllers
 
             var client = new HttpClient();
 
-            HttpResponseMessage response = await client.GetAsync("https://jakerocket.azurewebsites.net/interventions/elevator/" + id);
+            HttpResponseMessage response = await client.GetAsync("https://rocketelevators1.azurewebsites.net/intervention/elevator/" + id);
 
             response.EnsureSuccessStatusCode();
 
@@ -339,7 +339,7 @@ namespace RocketElevatorsCustomerPortal.Controllers
 
             var client = new HttpClient();
 
-            HttpResponseMessage response = await client.GetAsync("https://jakerocket.azurewebsites.net/interventions/employee");
+            HttpResponseMessage response = await client.GetAsync("https://rocketelevators1.azurewebsites.net/intervention/employee");
 
             response.EnsureSuccessStatusCode();
 

@@ -6,13 +6,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace RocketElevatorsCustomerPortal.Models
 {
-    public partial class jacobgomezContext : DbContext
+    public partial class matthewdandurandContext : DbContext
     {
-        public jacobgomezContext()
+        public matthewdandurandContext()
         {
         }
 
-        public jacobgomezContext(DbContextOptions<jacobgomezContext> options)
+        public matthewdandurandContext(DbContextOptions<matthewdandurandContext> options)
             : base(options)
         {
         }

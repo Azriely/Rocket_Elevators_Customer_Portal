@@ -24,7 +24,7 @@ namespace RocketElevatorsCustomerPortal.Controllers
     public class ProductController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly jacobgomezContext _context;
+        private readonly matthewdandurandContext _context;
         private readonly IFlashMessage _flashmessage;
         private readonly UserManager<RocketElevatorsCustomerPortalUser> _userManager;
 
@@ -33,7 +33,7 @@ namespace RocketElevatorsCustomerPortal.Controllers
         public List<Elevator> elevatorlist = new List<Elevator>();
 
 
-        public ProductController(jacobgomezContext context, UserManager<RocketElevatorsCustomerPortalUser> userManager, ILogger<HomeController> logger, IFlashMessage flashMessage)
+        public ProductController(matthewdandurandContext context, UserManager<RocketElevatorsCustomerPortalUser> userManager, ILogger<HomeController> logger, IFlashMessage flashMessage)
         {
             _flashmessage = flashMessage;
             _userManager = userManager;
@@ -81,7 +81,7 @@ namespace RocketElevatorsCustomerPortal.Controllers
             {
 
                 var client = new HttpClient();
-                HttpResponseMessage response = await client.GetAsync("https://jakerocket.azurewebsites.net/customer/id/" + user);
+                HttpResponseMessage response = await client.GetAsync("https://rocketelevators1.azurewebsites.net/customer/id/" + user);
 
                 response.EnsureSuccessStatusCode();
                 string jsonString = await response.Content.ReadAsStringAsync();
@@ -105,7 +105,7 @@ namespace RocketElevatorsCustomerPortal.Controllers
 
                 var client = new HttpClient();
 
-                HttpResponseMessage response = await client.GetAsync("https://jakerocket.azurewebsites.net/product/building/" + customer);
+                HttpResponseMessage response = await client.GetAsync("https://rocketelevators1.azurewebsites.net/product/building/" + customer);
 
                 response.EnsureSuccessStatusCode();
 
