@@ -2,5 +2,4 @@
 
 
 ReadME Loading
-Deployed WebSite:
-https://customercentralrocket.azurewebsites.net
+Live Web Site Link: https://rocketelevatorscustomerportal20211218112827.azurewebsites.net
